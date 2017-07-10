@@ -31,3 +31,11 @@ Route::get('/partner/tighten', function () {
 Route::get('/partner/vehikl', function () {
     return view('community-partner-vehikl');
 });
+
+Route::get('/dbtest', function () {
+    //DB::insert('insert into users (name, email, password) values (?, ?, ?)', ['Dayle', 'dayle@example.com', 123]);
+    $users = DB::select('select * from users;');
+    return $users;
+});
+
+
